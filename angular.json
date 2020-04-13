@@ -20,6 +20,8 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              "src/silent-refresh.html",
+              "src/oidc-client.min.js",
               "src/favicon.ico",
               "src/assets"
             ],
