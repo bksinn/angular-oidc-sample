@@ -13,7 +13,7 @@ export function getClientSettings(): UserManagerSettings {
       filterProtocolClaims: true,
       loadUserInfo: true,
       automaticSilentRenew: true,
-      silent_redirect_uri: 'http://localhost:4200/silent-refresh.html'
+      silent_redirect_uri: 'http://localhost:4200/silent'
   };
 }
 
@@ -32,6 +32,10 @@ export class AuthService {
 
    isLoggedIn(): boolean {
      return this.user != null && !this.user.expired;
+   }
+
+   getuser(): any {
+     return this.manager.getUser();
    }
 
    getClaims(): any {
@@ -62,9 +66,7 @@ export class AuthService {
       }).catch(err => console.error(err))
    }
 
-   renew() {
-     return this.manager.signinSilent().then(user => {
-       console.log("Silent renew success");
-     }).catch(err => console.error(err))
+   renew(): any {
+     return this.manager.signinSilent();
    }
 }

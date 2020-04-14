@@ -1,7 +1,7 @@
 .btn-primary {
     padding: 15px;
     margin: 10px auto;
-    width: 10%;
+    min-width: 10%;
     border-radius: 15px;
     cursor: pointer;
     border: none;
@@ -14,4 +14,13 @@
 
 .out {
     background-color: coral;
+}
+
+.renew {
+    background-color: royalblue;
+    width: auto;
+}
+
+.container {
+    margin: 25px;
 }

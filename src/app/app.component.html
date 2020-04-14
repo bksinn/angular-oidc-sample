@@ -1,19 +1,24 @@
-<h3>
-  <a routerLink="/">Home</a>
-  | <a routerLink="/protected">Protected</a> 
-  | <a routerLink="/call-api">Call API</a>
-</h3>
-<h1>
-  {{title}}
-</h1>
-<button (click)="logIn()" class="in btn-primary">Log In</button>
-<hr />
-<button (click)="logOff()" class="out btn-primary">Log Off</button>
-
-<div>
-  <pre>
-    <h2>User:</h2>
-    {{ user | json }}
-  </pre>
-  <router-outlet></router-outlet>
+<div class=container>
+  <h3>
+    <a routerLink="/">Home</a>
+    | <a routerLink="/protected">Protected</a> 
+    | <a routerLink="/call-api">Call API</a>
+  </h3>
+  <h1>
+    {{title}}
+  </h1>
+  <button (click)="logIn()" class="in btn-primary">Log In</button>
+  <hr />
+  <button (click)="logOff()" class="out btn-primary">Log Off</button>
+  <hr />
+  <button (click)="silentRenew()" class="renew btn-primary">Silent Renew</button>
+  
+  <div>
+    <pre>
+      <h2>User:</h2>
+      {{ user | json }}
+    </pre>
+    <router-outlet></router-outlet>
+  </div>
+  
 </div>

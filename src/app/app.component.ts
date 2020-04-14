@@ -19,7 +19,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-
+    this.authService.getuser().then(user => {
+      this.user = user;
+    })
   }
 
   logOff() {
@@ -28,5 +30,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   logIn() {
     return this.authService.startAuthentication();
+  }
+
+  silentRenew() {
+    return this.authService.renew().then(user => {
+      this.user = user;
+    })
   }
 }

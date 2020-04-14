@@ -3,16 +3,16 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-auth-callback',
-  templateUrl: './auth-callback.component.html',
-  styleUrls: ['./auth-callback.component.css']
+  selector: 'app-silent-renew',
+  templateUrl: './silent-renew.component.html',
+  styleUrls: ['./silent-renew.component.css']
 })
-export class AuthCallbackComponent implements OnInit {
+export class SilentRenewComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.authService.completeAuthentication();
+    this.authService.manager.signinSilentCallback();
     this.router.navigateByUrl('/');//Route back to index
   }
 
