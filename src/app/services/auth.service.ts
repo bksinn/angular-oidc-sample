@@ -34,10 +34,6 @@ export class AuthService {
      return this.user != null && !this.user.expired;
    }
 
-   getuser(): any {
-     return this.manager.getUser();
-   }
-
    getClaims(): any {
      return this.user.profile;
    }

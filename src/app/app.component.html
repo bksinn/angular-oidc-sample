@@ -14,10 +14,13 @@
   <button (click)="silentRenew()" class="renew btn-primary">Silent Renew</button>
   
   <div>
-    <pre>
+   
+    <pre #userInfo>
       <h2>User:</h2>
       {{ user | json }}
     </pre>
+    <button (click)="getCurrentUser()" class="see-current btn-primary">See Current User</button>
+
     <router-outlet></router-outlet>
   </div>
   
