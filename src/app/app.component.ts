@@ -1,37 +1,24 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { AuthGuardService } from './services/auth-guard.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild('userInfo', {static: false}) userInfo: ElementRef;
+export class AppComponent implements OnInit {
   title = 'angular-oidc-client';
   isLoggedIn: boolean;
-  user: Object;
+  user: any;
 
-  constructor(private authService: AuthService) {
-    //console.log(this.authService.manager.getUser());
+  constructor(private authService: AuthService) {}
 
+  ngOnInit() {
     this.getCurrentUser();
   }
 
-  ngOnInit() {
-    
-  }
-
-  ngAfterViewInit() {
-
-  }
-
-  getCurrentUser():Promise<any> {
-    return this.authService.manager.getUser().then(
-      user => {
-        this.user = user
-      });
+  getCurrentUser() {
+    return this.authService.getCurrentUser().then(user => this.user = user);
   }
 
   logOff() {
@@ -42,10 +29,18 @@ export class AppComponent implements OnInit, AfterViewInit {
     return this.authService.startAuthentication();
   }
 
+  revokeAccessToken() {
+    return this.authService.revokeAccessToken().then(() => {
+        console.log("Revoke success")
+    })
+    .catch(err => console.error(err));
+  }
+
   silentRenew() {
     return this.authService.renew().then(user => {
       this.user = user;
-    }).catch(err => {
+    })
+    .catch(err => {
       this.user = err.error;
       console.error(err)
     });

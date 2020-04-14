@@ -57,12 +57,14 @@ export class AuthService {
    }
 
    revokeAccessToken(): Promise<void> {
-      return this.manager.revokeAccessToken().then(user => {
-        console.log(user);
-      }).catch(err => console.error(err))
+      return this.manager.revokeAccessToken();
    }
 
-   renew(): any {
+   renew(): Promise<User> {
      return this.manager.signinSilent();
+   }
+
+   getCurrentUser(): Promise<User> {
+     return this.manager.getUser();
    }
 }
