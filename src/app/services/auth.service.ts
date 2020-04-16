@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { UserManager, UserManagerSettings, User } from 'oidc-client';
-import { Observable } from 'rxjs';
 
 export function getClientSettings(): UserManagerSettings {
   return {
