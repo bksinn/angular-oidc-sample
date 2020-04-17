@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-silent-renew',
   templateUrl: './silent-renew.component.html',
-  styleUrls: ['./silent-renew.component.css']
+  styleUrls: ['./silent-renew.component.less']
 })
 export class SilentRenewComponent implements OnInit {
 

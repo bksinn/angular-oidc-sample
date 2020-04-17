@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { CallApiComponent } from './call-api/call-api.component';
 import { SilentRenewComponent } from './silent-renew/silent-renew.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SilentRenewComponent } from './silent-renew/silent-renew.component';
     ProtectedComponent,
     AuthCallbackComponent,
     CallApiComponent,
-    SilentRenewComponent
+    SilentRenewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

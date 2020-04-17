@@ -5,7 +5,7 @@ import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-call-api',
   templateUrl: './call-api.component.html',
-  styleUrls: ['./call-api.component.css']
+  styleUrls: ['./call-api.component.less']
 })
 export class CallApiComponent implements OnInit {
   response: Object;

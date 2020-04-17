@@ -6,11 +6,17 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
 import { CallApiComponent } from './call-api/call-api.component';
 import { SilentRenewComponent } from './silent-renew/silent-renew.component';
+import { LoginComponent } from './login/login.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
     {
         path: '',
-        children: []
+        component: LoginComponent
+    },
+    {
+      path: 'login',
+      component: LoginComponent
     },
     {
         path: 'protected',
@@ -29,6 +35,10 @@ const routes: Routes = [
     {
       path: 'silent',
       component: SilentRenewComponent,
+    },
+    {
+      path: '*',
+      component: AppComponent,
     }
 ];
 
