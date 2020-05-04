@@ -1,5 +1,5 @@
 <div class=container>
-  <!-- <h3>
+  <h3>
     <a routerLink="/">Home</a>
     | <a routerLink="/protected">Protected</a> 
     | <a routerLink="/call-api">Call API</a>
@@ -8,12 +8,12 @@
     {{title}}
   </h1>
   <button (click)="logIn()" class="in btn-primary">Log In</button>
-  <hr />
   <button (click)="logOff()" class="out btn-primary">Log Off</button>
-  <hr />
   <button (click)="silentRenew()" class="renew btn-primary">Silent Renew</button>
-  <hr />
   <button (click)="revokeAccessToken()" class="renew btn-primary">Revoke Access Token</button>
+  <a routerLink="/call-api">
+    <button class="renew btn-primary">Call API</button>
+  </a>
   
   <div>
    
@@ -24,6 +24,6 @@
     <button (click)="getCurrentUser()" class="see-current btn-primary">See Current User</button>
 
     
-  </div> -->
+  </div>
   <router-outlet></router-outlet>
 </div>
